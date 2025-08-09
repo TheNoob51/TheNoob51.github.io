@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/static/css/main.e41b8e83.css",
+    "main.js": "/static/js/main.0ea8e368.js",
+    "static/js/453.aac68abc.chunk.js": "/static/js/453.aac68abc.chunk.js",
+    "static/media/ollama.png": "/static/media/ollama.59bfe6a69027e2169580.png",
+    "static/media/langchain-color.png": "/static/media/langchain-color.b6cf9a53d0636b3c26f1.png",
+    "static/media/AgenticAI.png": "/static/media/AgenticAI.6c43cefb4d95efbadff3.png",
+    "static/media/Matplotlib.png": "/static/media/Matplotlib.108848d4569ad2010a41.png",
+    "static/media/Python.png": "/static/media/Python.65c0e9243c20520b4fdf.png",
+    "static/media/scikit-learn.png": "/static/media/scikit-learn.6e8fb972f2cbb25af1f6.png",
+    "static/media/Git.png": "/static/media/Git.8d37adcd9121c2aba1e0.png",
+    "static/media/NumPy.png": "/static/media/NumPy.ad6ce4268be9e06f8cb4.png",
+    "static/media/Java.png": "/static/media/Java.00c3be7f346b2c00213d.png",
+    "static/media/Docker.png": "/static/media/Docker.4e29864a43ac93d4f457.png",
+    "static/media/Kubernetes.png": "/static/media/Kubernetes.79f5acd191c9ebc0ac9e.png",
+    "index.html": "/index.html",
+    "main.e41b8e83.css.map": "/static/css/main.e41b8e83.css.map",
+    "main.0ea8e368.js.map": "/static/js/main.0ea8e368.js.map",
+    "453.aac68abc.chunk.js.map": "/static/js/453.aac68abc.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e41b8e83.css",
+    "static/js/main.0ea8e368.js"
+  ]
+}
