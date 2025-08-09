@@ -1,0 +1,83 @@
+.footer {
+  background-color: var(--dark-bg-primary);
+  color: var(--text-secondary-light);
+  padding: 30px 20px;
+  text-align: center;
+  border-top: 1px solid var(--border-color-subtle);
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px; /* Space between elements */
+}
+
+.footer-social-links {
+  display: flex;
+  gap: 25px; /* Increased gap for better spacing */
+  margin-bottom: 10px; /* Space below social links */
+}
+
+.footer-social-links a {
+  color: var(--text-secondary-light);
+  font-size: 1.8rem; /* Larger icons */
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-social-links a:hover {
+  color: var(--primary-neon-green);
+  transform: scale(1.1);
+}
+
+.footer-copyright p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.footer-credits p {
+  margin: 0;
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+.heart-icon {
+  color: var(--primary-neon-pink); /* Or any neon color you prefer */
+  font-size: 1em; /* Match surrounding text size */
+}
+
+
+@media (min-width: 768px) {
+  .footer-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-social-links {
+    order: 2; /* Social links in the middle on desktop */
+    margin-bottom: 0;
+  }
+
+  .footer-copyright {
+    order: 1; /* Copyright first on desktop */
+    text-align: left;
+  }
+
+  .footer-credits {
+    order: 3; /* Credits last on desktop */
+    text-align: right;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-social-links a {
+    font-size: 1.6rem; /* Slightly smaller icons for mobile */
+    gap: 20px;
+  }
+  .footer-copyright p, .footer-credits p {
+    font-size: 0.85rem;
+  }
+}

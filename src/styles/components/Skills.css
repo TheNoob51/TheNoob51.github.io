@@ -1,0 +1,299 @@
+.skills-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.skills-content {
+  position: relative;
+  z-index: 2;
+}
+
+.skills-header {
+  text-align: center;
+  margin-bottom: var(--space-3xl);
+}
+
+.skills-header h2 {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  margin-bottom: var(--space-lg);
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: var(--font-weight-bold);
+}
+
+.skills-subtitle {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  color: var(--text-tertiary);
+  margin-bottom: var(--space-xl);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-divider {
+  width: 80px;
+  height: 4px;
+  background: var(--gradient-secondary);
+  margin: 0 auto;
+  border-radius: var(--radius-full);
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: var(--space-2xl);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.skill-category {
+  background: var(--bg-tertiary);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-2xl);
+  border: 1px solid var(--border-primary);
+  box-shadow: var(--shadow-lg);
+  transition: var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-category::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--category-color);
+  opacity: 0.8;
+}
+
+.skill-category:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--category-color);
+}
+
+.category-header {
+  text-align: center;
+  margin-bottom: var(--space-2xl);
+}
+
+.category-header h3 {
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  font-weight: var(--font-weight-bold);
+  color: var(--category-color);
+  margin-bottom: var(--space-md);
+}
+
+.category-divider {
+  width: 60px;
+  height: 3px;
+  background: var(--category-color);
+  margin: 0 auto;
+  border-radius: var(--radius-full);
+  opacity: 0.6;
+}
+
+.skill-jar {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  gap: var(--space-lg);
+  justify-items: center;
+  align-items: center;
+}
+
+.skill-cube {
+  width: 80px;
+  height: 80px;
+  background: var(--bg-glass); /* Glass morphism background that matches theme */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: var(--radius-xl);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  cursor: default;
+  transition: var(--transition-normal);
+  border: 2px solid var(--border-primary);
+  box-shadow: var(--shadow-md);
+}
+
+.skill-cube:hover {
+  transform: translateY(-6px) scale(1.05);
+  box-shadow: var(--shadow-xl), 0 0 20px rgba(99, 102, 241, 0.3);
+  border-color: var(--category-color);
+  background: rgba(22, 33, 62, 0.9); /* Slightly more opaque on hover */
+}
+
+.skill-logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: var(--space-sm);
+}
+
+.skill-logo-img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  display: block;
+  transition: var(--transition-fast);
+  /* No filters - keep original logo colors */
+}
+
+.skill-cube:hover .skill-logo-img {
+  transform: scale(1.1);
+  /* Simple drop shadow without color distortion */
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
+}
+
+.skill-placeholder {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-full);
+  background: var(--gradient-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-on-accent);
+  font-weight: var(--font-weight-bold);
+  font-size: 1.5rem;
+}
+
+.skill-tooltip {
+  position: absolute;
+  left: 50%;
+  bottom: 100%;
+  transform: translateX(-50%) translateY(-8px);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  font-weight: var(--font-weight-medium);
+  white-space: nowrap;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border-primary);
+  pointer-events: none;
+  z-index: 10;
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition-fast);
+}
+
+.skill-cube:hover .skill-tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(-12px);
+}
+
+/* Background decoration */
+.skills-container::before {
+  content: '';
+  position: absolute;
+  top: 20%;
+  right: -10%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.1) 0%, transparent 70%);
+  border-radius: var(--radius-full);
+  z-index: 1;
+}
+
+.skills-container::after {
+  content: '';
+  position: absolute;
+  bottom: 20%;
+  left: -10%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.08) 0%, transparent 70%);
+  border-radius: var(--radius-full);
+  z-index: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+  
+  .skill-category {
+    padding: var(--space-xl);
+  }
+  
+  .skill-jar {
+    grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+    gap: var(--space-md);
+  }
+  
+  .skill-cube {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .skill-logo-container {
+    padding: var(--space-xs);
+  }
+  
+  .skill-logo-img {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .skill-cube:hover .skill-logo-img {
+    filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.15));
+  }
+  
+  .skill-placeholder {
+    width: 40px;
+    height: 40px;
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .skill-category {
+    padding: var(--space-lg);
+  }
+  
+  .skill-jar {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-sm);
+  }
+  
+  .skill-cube {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .skill-logo-container {
+    padding: 2px;
+  }
+  
+  .skill-logo-img {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .skill-cube:hover .skill-logo-img {
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
+  }
+  
+  .skill-placeholder {
+    width: 32px;
+    height: 32px;
+    font-size: 1rem;
+  }
+}
